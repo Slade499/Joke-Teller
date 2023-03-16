@@ -12,11 +12,11 @@ function tellMe(joke) {
     VoiceRSS.speech({
         key: '8b9f5e2ee5da4a849389803b05cb9874',
         src: joke,
-        hl: 'en-us',
-        v: 'Linda',
+        hl: 'en-ca',
+        v: 'Mason',
         r: 0, 
         c: 'mp3',
-        f: '44khz_16bit_stereo',
+        f: 'ulaw_44khz_stereo',
         ssml: false
     });
 }
@@ -24,7 +24,7 @@ function tellMe(joke) {
 // Get joke from joke 
 async function getJokes() {
     let joke = ''
-    const apiUrl = 'https://v2.jokeapi.dev/joke/Dark?blacklistFlags=nsfw,religious,political,racist,explicit';
+    const apiUrl = 'https://v2.jokeapi.dev/joke/Dark';
     try {
         const response = await fetch(apiUrl);
         const data = await response.json();
